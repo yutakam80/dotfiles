@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# Battery
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+
+# Clock
+defaults write com.apple.menuextra.clock DateFormat -string "EEE MMM d  H:mm:ss"
+defaults write com.apple.menuextra.clock FlashDateSeparators -bool true
+
+# Trackpad
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
+
+# Dock
+defaults write com.apple.dock autohide -bool true
+
+# Sound
+sudo defaults write bluetoothaudiod "Enable AptX codec" -bool true
+sudo defaults write bluetoothaudiod "Enable AAC codec" -bool true
+
+# Screenshot
+defaults write com.apple.screencapture disable-shadow -bool true
+
+# iCloud
+defaults write -g NSDocumentSaveNewDocumentsToCloud -bool false
