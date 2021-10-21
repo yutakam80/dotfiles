@@ -24,5 +24,8 @@ sudo defaults write bluetoothaudiod "Enable AAC codec" -bool true
 # Screenshot
 defaults write com.apple.screencapture disable-shadow -bool true
 
+# Finder
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
 # iCloud
-defaults write -g NSDocumentSaveNewDocumentsToCloud -bool false
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
