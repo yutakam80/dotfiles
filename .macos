@@ -20,6 +20,8 @@ defaults write NSGlobalDomain com.apple.trackpad.scaling 1
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 # スクリーンショットに影を付けない
 defaults write com.apple.screencapture disable-shadow -bool true
+## スペルの訂正を無効にする
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Dock
 ## Dockを自動で非表示
@@ -29,6 +31,10 @@ defaults write com.apple.dock autohide -bool true
 sudo defaults write bluetoothaudiod "Enable AptX codec" -bool true
 sudo defaults write bluetoothaudiod "Enable AAC codec" -bool true
 
+# Network
+## Google Public DNSを設定する
+networksetup -setdnsservers Wi-Fi 2001:4860:4860::8844 2001:4860:4860::8888 8.8.4.4 8.8.8.8
+
 # Finder
 ## 拡張子を常に表示
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -36,8 +42,14 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 defaults write com.apple.finder AppleShowAllFiles -bool true
 ## 新規ウインドウでの表示
 defaults write com.apple.finder NewWindowTargetPath -string "file:///Users/yutakam80/"
-# 最近使ったタグを非表示
+## 最近使ったタグを非表示
 defaults write com.apple.finder ShowRecentTags -bool false
+## ゴミ箱を空にする前の警告の無効化
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
+## Finder のタイトルバーにフルパスを表示する
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+## スペルの訂正を無効にする
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # iCloud
 ## デフォルトの保存先をiCloudからローカルのストレージに変更
