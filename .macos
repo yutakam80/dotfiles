@@ -1,31 +1,44 @@
 #!/usr/bin/env bash
 
-# Battery
-defaults write com.apple.menuextra.battery ShowPercent -string "YES"
-
 # Clock
-defaults write com.apple.menuextra.clock DateFormat -string "EEE MMM d  H:mm:ss"
+## 日時フォーマットを変更
+defaults write com.apple.menuextra.clock DateFormat -string "EEE MMM d  H:mm"
+## セパレーターを秒間隔で点滅
 defaults write com.apple.menuextra.clock FlashDateSeparators -bool true
 
 # Trackpad
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -bool true
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
+## 軌道の速さ
+defaults write NSGlobalDomain com.apple.trackpad.scaling 1
+
+# System
+## SMB共有上の.DS_Storeファイルを読み取らない
+defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+# スクリーンショットに影を付けない
+defaults write com.apple.screencapture disable-shadow -bool true
 
 # Dock
+## Dockを自動で非表示
 defaults write com.apple.dock autohide -bool true
 
 # Sound
 sudo defaults write bluetoothaudiod "Enable AptX codec" -bool true
 sudo defaults write bluetoothaudiod "Enable AAC codec" -bool true
 
-# Screenshot
-defaults write com.apple.screencapture disable-shadow -bool true
-
 # Finder
+## 拡張子を常に表示
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+## 隠しファイルや隠しフォルダを表示
+defaults write com.apple.finder AppleShowAllFiles -bool true
+## 新規ウインドウでの表示
+defaults write com.apple.finder NewWindowTargetPath -string "file:///Users/yutakam80/"
+# 最近使ったタグを非表示
+defaults write com.apple.finder ShowRecentTags -bool false
 
 # iCloud
+## デフォルトの保存先をiCloudからローカルのストレージに変更
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
