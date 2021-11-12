@@ -13,7 +13,7 @@ defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -bool true
 ## 軌道の速さ
-defaults write NSGlobalDomain com.apple.trackpad.scaling 1
+defaults write NSGlobalDomain com.apple.trackpad.scaling 1.5
 
 # System
 ## SMB共有上の.DS_Storeファイルを読み取らない
