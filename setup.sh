@@ -5,21 +5,24 @@ source ./config.sh
 echo "Setting macOS"
 source $dotfiles_folder/.macos
 
+# zsh
+echo "Symlinking .zshrc file"
+rm -rf $HOME/.zshrc
+ln -s $dotfiles_folder/zsh/.zshrc $HOME/.zshrc
+rm -rf $HOME/.zprofile
+ln -s $dotfiles_folder/zsh/.zshrc $HOME/.zprofile
+
 # Homebrew
 echo "Installing Homebrew"
 if test ! $(which brew); then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 brew update
 
 echo "Installing Brew packages"
 brew bundle --file=homebrew/Brewfile
-
-# zsh
-echo "Symlinking .zshrc file"
-rm -rf $HOME/.zshrc
-ln -s $dotfiles_folder/zsh/.zshrc $HOME/.zshrc
 
 # Git
 echo "Symlinking .gitconfig file"

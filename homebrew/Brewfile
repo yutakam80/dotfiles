@@ -13,7 +13,6 @@ brew "rbenv"
 brew "unar"
 brew "yarn"
 brew "zplug"
-brew "zsh"
 
 cask "android-studio"
 cask "figma"

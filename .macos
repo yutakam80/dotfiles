@@ -40,8 +40,6 @@ networksetup -setdnsservers Wi-Fi 2001:4860:4860::8844 2001:4860:4860::8888 8.8.
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 ## 隠しファイルや隠しフォルダを表示
 defaults write com.apple.finder AppleShowAllFiles -bool true
-## 新規ウインドウでの表示
-defaults write com.apple.finder NewWindowTargetPath -string "file:///Users/yutakam80/"
 ## 最近使ったタグを非表示
 defaults write com.apple.finder ShowRecentTags -bool false
 ## ゴミ箱を空にする前の警告の無効化
