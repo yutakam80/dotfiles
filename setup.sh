@@ -32,10 +32,3 @@ ln -s $dotfiles_folder/git/.gitconfig $HOME/.gitconfig
 echo "Symlinking .gitignore file"
 rm -rf $HOME/.gitignore
 ln -s $dotfiles_folder/git/.gitignore $HOME/.gitignore
-
-# karabiner
-echo "Symlinking karabiner.json file"
-rm -f $HOME/.config/karabiner/karabiner.json
-ln -s $dotfiles_folder/karabiner/karabiner.json $HOME/.config/karabiner/karabiner.json
-
-chsh -s /usr/local/bin/zsh
