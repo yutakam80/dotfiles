@@ -2,6 +2,9 @@
 	name = yutakam80
 	email = yutakam80@gmail.com
 
+[core]
+    excludesfile = ~/.gitignore
+
 [alias]
 	co = commit
 	ch = checkout
