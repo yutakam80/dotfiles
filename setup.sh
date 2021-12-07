@@ -10,7 +10,7 @@ echo "Symlinking .zshrc file"
 rm -rf $HOME/.zshrc
 ln -s $dotfiles_folder/zsh/.zshrc $HOME/.zshrc
 rm -rf $HOME/.zprofile
-ln -s $dotfiles_folder/zsh/.zshrc $HOME/.zprofile
+ln -s $dotfiles_folder/zsh/.zprofile $HOME/.zprofile
 
 # Homebrew
 echo "Installing Homebrew"
