@@ -52,3 +52,7 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # iCloud
 ## デフォルトの保存先をiCloudからローカルのストレージに変更
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
+# Music
+## Apple Musicが勝手に立ち上がらないようにする
+launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
