@@ -48,6 +48,7 @@ bindkey "^[[B" down-line-or-beginning-search
 
 # rdenv
 [[ -d ~/.rbenv  ]] && \
+    export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
     export PATH=${HOME}/.rbenv/bin:${PATH} && \
     eval "$(rbenv init -)"
 
@@ -65,3 +66,9 @@ zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
 PROMPT="%{${fg[blue]}%}[%~]%{${reset_color}%}"
 PROMPT=$PROMPT'${vcs_info_msg_0_}'
+
+function llvm (){
+    export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+    export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+    export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+}
