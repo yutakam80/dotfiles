@@ -20,7 +20,6 @@ cask "imageoptim"
 cask "messenger"
 cask "notion"
 cask "obs"
-cask "react-native-debugger"
 cask "shiftit"
 cask "virtualbox"
 cask "visual-studio-code"
@@ -30,7 +29,6 @@ mas "1Password", id: 443987910
 mas "Amphetamine", id: 937984704
 mas "DaisyDisk", id: 411643860
 mas "Display Menu", id: 549083868
-mas "Genki Arcade", id: 1555925018
 mas "JoyKeyMapper", id: 1511416593
 mas "JPEGmini", id: 498944723
 mas "Keynote", id: 409183694
@@ -42,6 +40,5 @@ mas "Pages", id: 409201541
 mas "PNG mini", id: 530839610
 mas "Skitch", id: 425955336
 mas "Slack", id: 803453959
-mas "Transmit", id: 403388562
 mas "TweetDeck", id: 485812721
 mas "Xcode", id: 497799835
