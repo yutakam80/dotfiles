@@ -46,14 +46,8 @@ autoload -U down-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "^[[B" down-line-or-beginning-search
 
-# rdenv
-[[ -d ~/.rbenv  ]] && \
-    export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-    export PATH=${HOME}/.rbenv/bin:${PATH} && \
-    eval "$(rbenv init -)"
-
-# nodenv
-eval "$(nodenv init -)"
+# asdf
+. $(brew --prefix asdf)/libexec/asdf.sh
 
 # git
 autoload -Uz vcs_info
@@ -72,3 +66,20 @@ function llvm (){
     export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
     export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 }
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/yutakam80/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yutakam80/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/yutakam80/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yutakam80/google-cloud-sdk/completion.zsh.inc'; fi
+
+# bun completions
+[ -s "/Users/yutakam80/.bun/_bun" ] && source "/Users/yutakam80/.bun/_bun"
+
+# bun
+export BUN_INSTALL="/Users/yutakam80/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export PATH="$HOME/Library/Python/3.8/bin:$PATH"
+export PATH="/opt/homebrew/opt/ffmpeg@4/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"

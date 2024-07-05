@@ -16,3 +16,6 @@
 	uncommit = reset HEAD^
 	branch-name = "!git rev-parse --abbrev-ref HEAD"
 	ppush = "!git push --set-upstream origin $(git branch-name)"
+	vacuum = "!f () { git checkout $1; git branch --merged|egrep -v '\\*|develop|main'|xargs git branch -d; git fetch --prune; };f"
+[pull]
+	rebase = false
